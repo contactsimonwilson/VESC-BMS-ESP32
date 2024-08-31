@@ -38,7 +38,7 @@ void readBatteryCellVoltages() {
     // You can print or use these extracted values as needed
     // ...
   } else {
-    Serial.println("Incomplete response in readBatteryVoltages!");
+    log_i("Incomplete or no response in readBatteryVoltages");
   }
 }
 
@@ -85,6 +85,6 @@ void readBatteryTemperatureAndCurrent() {
     // Extract SOC
     bmsData.soc = ((response[3 + 14 * 2] << 8) | response[4 + 14 * 2]);
   } else {
-    Serial.println("Incomplete response in readBatteryTemperatureAndCurrent!");
+      log_i("Incomplete or no response in readBatteryVoltages");
   }
 }

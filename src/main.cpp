@@ -11,7 +11,7 @@ static const char* TAG = "VESCBMS";
 void setup() {
    // Set up serial connection
    BMSSerial.begin(9600, SERIAL_8N1, 20, 21, false); // Adjust pins (RX, TX) and baud rate as needed
-   log_i("Init complete");
+   log_d("Init complete");
 }
 
 void readBmsData() {
@@ -20,12 +20,14 @@ void readBmsData() {
 }
 
 void sendBmsDataToVesc() {
+   log_d("Sending BMS data to VESC");
   // Construct VESC CAN messages based on the BMS data
   // Send the VESC CAN messages
   // ...
 }
 
 void receiveVescCommands() {
+   log_d("Receiving VESC commands");	
   // Check for incoming CAN messages
   // If a VESC command is received, process it accordingly
   // ...
